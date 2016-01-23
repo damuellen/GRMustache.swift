@@ -123,7 +123,7 @@ final class TemplateParser {
                 }
             case .Tag(let startIndex, let startLineNumber):
                 if c == "\n" {
-                    ++lineNumber
+                    lineNumber += 1
                 } else if atString(i, currentDelimiters.tagDelimiterPair.1) {
                     let tagInitialIndex = startIndex.advancedBy(currentDelimiters.tagStartLength)
                     let tagInitial = templateString[tagInitialIndex]
